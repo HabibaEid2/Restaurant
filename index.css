@@ -1,0 +1,224 @@
+html {
+    scroll-behavior: smooth;
+}
+:root {
+    --main-color: hsl(38, 61%, 73%); 
+    --padding : 20px 15px; 
+}
+/* start components */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+/* end components */
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+    padding: 0;
+    margin: 0;
+}
+/* start nav top */
+.mainNav {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+}
+.navTop {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--padding);
+    color: white;
+}
+.navTop > div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.navTop .left .icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: solid 2px var(--main-color);
+    transform: rotate(45deg);
+}
+hr.navTopLine {
+    color: var(--main-color);
+    margin: 0;
+}
+@media (max-width : 991px) {
+    .navTop {
+        justify-content: center;
+    }
+    .navTop .left {
+        display: none;
+    }
+}
+/* end nav top */
+
+/* start nav bottom */
+.navBottom {
+    padding: var(--padding);
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+.navBottom ul {
+    gap: 20px;
+}
+.navBottom ul li a {
+    transition: .4s;
+    position: relative;
+}
+.navBottom ul li a::after {
+    content: "";
+    width: 0px;
+    height: 5px;
+    position: absolute;
+    bottom: -60%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    border-top: var(--main-color) solid 1px;
+    border-bottom: var(--main-color) solid 1px;
+    transition: .4s;
+}
+.navBottom ul li a:hover::after {
+    width: 100%;
+}
+.navBottom ul li a:hover {
+    color: var(--main-color);
+}
+.navBottom button {
+    padding: 10px 30px;
+    border: solid 2px var(--main-color);
+    background-color: var(--main-color);
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin: auto 15px;
+    position: relative;
+    overflow: hidden;
+}
+.navBottom button::before {
+    content: "";
+    width: 126%;
+    height: 205%;
+    background-color: black;
+    position: absolute;
+    top: -205%;
+    left: -26px;
+    border-radius: 58%;
+    transition: .4s;
+}
+.navBottom button::after {
+    content: "FIND A TABLE";
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: 100%;
+    color: white;
+    transition: .2s;
+}
+.navBottom button:hover::before {
+    top: -55%;
+    transition: .2s;
+}
+.navBottom button:hover::after {
+    top: 50%;
+    transition: .4s;
+}
+.navBottom .menu {
+    width: 26px;
+}
+.navBottom .menu span{
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: white;
+    margin: 6px;
+}
+.navBottom .menu .one {
+    animation: spanOne .45s .3s ease-in-out infinite alternate backwards ;
+}
+.navBottom .menu .two {
+    animation: spanTwo .45s .1s ease-in-out infinite alternate-reverse backwards;
+}
+.navBottom .menu .three {
+    animation: spanThree .45s .2s ease-in-out infinite alternate-reverse backwards;
+}
+@keyframes spanOne {
+    0% {
+        width: 26px;
+    }
+    100% {
+        width: 7px;
+    }
+}
+@keyframes spanTwo {
+    0% {
+        width: 26px;
+    }
+    100% {
+        width: 7px;
+    }
+}
+
+@keyframes spanThree {
+    0% {
+        width: 26px;
+    }
+    100% {
+        width: 7px;
+    }
+}
+@media (max-width : 567px) {
+    .navBottom .navbar button {
+        display: none;
+    }
+}
+@media (max-width : 1199px) {
+  .navBottom .navbar ul {
+    display: none;
+  }  
+  
+}
+@media (min-width : 1198px) {
+    .navbar .menu {
+        display: none;
+      }
+}
+/* end nav bottm */
+
+/* start section */
+.section {
+    position: relative;
+    z-index: 0;
+}
+.section .carousel-item {
+    height: 100vh;
+}
+.section img {
+    height: 100%;
+    object-fit: cover;
+}
+.section .active img {
+    animation: scale 1s ease-in-out infinite;
+    transition: 1s;
+}
+@keyframes scale {
+    0% {
+        transform: scale(1.5);
+    }
+    0% {
+        transform: scale(1);
+    }
+}
+/* end section */
