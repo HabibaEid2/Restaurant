@@ -17,7 +17,7 @@
 </head>
 <body>
     <!-- start nav -->
-    <div class="mainNav">
+    <div class="mainNav" id="home">
         <div class="navTop">
             <div class="left">
                 <div>Restaurant St, Delicious City, London 9578, U</div>
@@ -35,7 +35,7 @@
                 <a href="#"><img src="./images/logo.svg" alt=""></a>
             </div>
             <div class="navbar">
-                <ul>
+                <ul class="normalNav">
                     <li>
                         <a href="#home">HOME</a>
                     </li>
@@ -46,19 +46,63 @@
                         <a href="#about-us">ABOUT US</a>
                     </li>
                     <li>
-                        <a href="#chefs">OUR CHEFS</a>
+                        <a href="#services">Services</a>
                     </li>
                     <li>
                         <a href="#contact">CONTACT</a>
                     </li>
                 </ul>
-                <button class="find-a-table">
+                <button class="colored-btn">
                     <a href="#">FIND A TABLE</a>
                 </button>
-                <div class="menu">
+                <div class="menu" id="menu" type = "button" data-bs-toggle = "offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                     <span class="one"></span>
                     <span class="two"></span>
                     <span class="three"></span>
+                </div>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasLabel">
+                    <div class="offcanvas-header">
+                        <a href="#"><img src="./images/logo.svg" class="offcanvas-title" id="offcanvasLabel"/></a>
+                        <button type="button" class="btn-close" data-bs-dismiss = "offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul>
+                            <li>
+                                <a href="#home">HOME</a>
+                            </li>
+                            <li>
+                                <a href="#menus">MENUS</a>
+                            </li>
+                            <li>
+                                <a href="#about-us">ABOUT US</a>
+                            </li>
+                            <li>
+                                <a href="#services">Services</a>
+                            </li>
+                            <li>
+                                <a href="#contact">CONTACT</a>
+                            </li>
+                        </ul>
+                        <div class="offcanvas-content">
+                            <h1>Visit Us</h1>
+                            <p>
+                                Restaurant St, Delicious City, London 9578, UK
+                            </p>
+                            <p>
+                                Open: 9.30 am - 2.30pm
+                            </p>
+                            <p>
+                                <a href="mailto:heid3424@gmail.com">heid3424@gmail.com</a>
+                            </p>
+                            <span></span>
+                            <h6>
+                                Booking Request
+                            </h6>
+                            <div class="phone">
+                                +20 1146397960
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -67,7 +111,7 @@
 
     <!-- start section -->
     <div class="section">
-        <div id="carouselExample" class="carousel slide carousel-fade" >
+        <div id="carouselExample" class="carousel slide carousel-fade" data-bs-ride = "carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active"  data-bs-interval = "5000"> <!-- delay -->
                     <img src="./images/hero-slider-1.jpg" alt="" class="d-block w-100">
@@ -75,14 +119,14 @@
                         <div class="subTitle">
                             TRADATIONAL & HYGINE
                         </div>
-                        <h1>
+                        <h1 class="mainTitle">
                             For the love of delicious food
                         </h1>
                         <p>
                             Come with family & feel the joy of mouthwatering food
 
                         </p>
-                        <button class="mainButton">
+                        <button class="unColored-btn">
                             <a href="#">VIEW OUR MENU</a>
                         </button>
                     </div>
@@ -93,14 +137,14 @@
                         <div class="subTitle">
                             DELIGHTFUL EXPERIECE
                         </div>
-                        <h1>
+                        <h1 class="mainTitle">
                             Flavors Inspired by the Seasons
                         </h1>
                         <p>
                             Come with family & feel the joy of mouthwatering food
 
                         </p>
-                        <button class="mainButton">
+                        <button class="unColored-btn">
                             <a href="#">VIEW OUR MENU</a>
                         </button>
                     </div>
@@ -111,14 +155,14 @@
                         <div class="subTitle">
                             AMAZING & DELICIOUS
                         </div>
-                        <h1>
+                        <h1 class="mainTitle">
                             Where every flavor tells a story
                         </h1>
                         <p>
                             Come with family & feel the joy of mouthwatering food
 
                         </p>
-                        <button class="mainButton">
+                        <button class="unColored-btn">
                             <a href="#">VIEW OUR MENU</a>
                         </button>
                     </div>
@@ -137,6 +181,72 @@
         </div>
     </div>
     <!-- end section -->
+
+    <!-- start topIcon -->
+    <div class="topIcon" id="topIcon">
+        <i class="fas fa-long-arrow-up"></i>
+    </div>
+    <!-- end topIcon -->
+
+    <!-- start services -->
+    <div class="services" id="services">
+        <div class="container">
+            <div class="top-content">
+                <div class="subTitle">FLAVORS FOR ROYALTY</div>
+                <h1 class="mainTitle">We Offer Top Notch</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae pariatur, recusandae quasi numquam distinctio in. Amet rem nulla maxime, repudiandae eum itaque, quis sunt voluptate enim, ullam natus deserunt facere.
+                </p>
+            </div>
+            <div class="bottom-content">
+                <div class="service">
+                    <div class="image">
+                        <div class="inside">
+                            <img src="./images/service-1.jpg" alt="">
+                        </div>
+                    </div>                    <h3>Breakfase</h3>
+                    <a href="#menu">VIEW MENU</a>
+                </div>
+
+                <div class="service">
+                    <div class="image">
+                        <div class="inside">
+                            <img src="./images/service-2.jpg" alt="">
+                        </div>
+                    </div>                    <h3>Appetizers</h3>
+                    <a href="#menu">VIEW MENU</a>
+                </div>
+
+                <div class="service">
+                    <div class="image">
+                        <div class="inside">
+                            <img src="./images/service-2.jpg" alt="">
+                        </div>
+                    </div>
+                    <h3>Drinks</h3>
+                    <a href="#menu">VIEW MENU</a>
+                </div>
+            </div>
+        </div>
+        <img src="./images/shape-2.png" alt="" class="shap one">
+        <img src="./images/shape-1.png" alt="" class="shap two">
+    </div>
+    <!-- end services -->
+
+    <!-- start books -->
+    <div class="books">
+        <div class="container">
+            <div class="subTitle">OUR STORY</div>
+            <h1 class="mainTitle">Every Fla vor Tells a Story</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quasi ad temporibus nemo aliquid! Quo aperiam nesciunt voluptatum sint reiciendis, error quaerat quam. Laudantium ea eum sapiente aliquam nam beatae?
+            </p>
+            <h3>Book Through Call</h3>
+            <div class="phone">+80 (400) 123 4567</div>
+            <button class="unColored-btn">READ MORE</button>
+        </div>
+    </div>
+    <!-- end books -->
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./index.js"></script>
 </body>
