@@ -608,17 +608,17 @@ hr.navTopLine {
 }
 .services img.one {
     position: absolute;
-    animation: services-shap1 4s ease-in-out infinite alternate-reverse;
+    animation: move-bottom 4s ease-in-out infinite alternate-reverse;
     top: 0;
     right: 0;
 }
 .services img.two {
     position: absolute;
-    animation: services-shap2  4s ease-in-out infinite alternate-reverse;
+    animation: move-top  4s ease-in-out infinite alternate-reverse;
     bottom: 0;
     left: 0;
 }
-@keyframes  services-shap1{
+@keyframes  move-bottom{
     0% {
         top: 0;
     }
@@ -626,7 +626,7 @@ hr.navTopLine {
         top: 4%;
     }
 }
-@keyframes  services-shap2{
+@keyframes  move-top{
     0% {
         bottom: 0;
     }
@@ -793,6 +793,12 @@ hr.navTopLine {
     padding-bottom: 90px;
     background-color: #161718;
     color: white;
+    position: relative;
+    overflow: hidden;
+}
+.menus .container {
+    position: relative;
+    z-index: 1;
 }
 .menus .top-content {
     text-align: center;
@@ -803,7 +809,18 @@ hr.navTopLine {
 .menus .bottom-content {
     display: grid;
     grid-template-columns :1fr 1fr ;
-    gap: 20px;
+    column-gap: 100px;
+    position: relative;
+}
+.menus .bottom-content::after {
+    content: "";
+    width: 2px;
+    background-color:hsla(0, 0%, 100%, 0.2);
+    height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50% ; 
+    transform: translateY(-50%);
 }
 .menus .bottom-content .dish {
     display: flex;
@@ -815,7 +832,6 @@ hr.navTopLine {
 .menus .dish .head {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 5px;
 }
@@ -852,8 +868,9 @@ hr.navTopLine {
     color: var(--main-color);
 }
 .menus .head .betweenThem {
-    height: 4px;
+    height: 7px;
     width: 100%;
+    margin: 0 5px;
     border-top: 1px solid var(--main-color);
     border-bottom: 1px solid var(--main-color);
 }
@@ -871,12 +888,79 @@ hr.navTopLine {
 }
 .menus .content p {
     color: hsla(0, 0%, 65%, 1);
-    padding: 10px 0;
+    padding: 10px 10px 10px 0px;
     margin: 0;
+}
+.menus .winter-date {
+    margin : 30px auto;
+    width: fit-content;
+    text-align: center;
+}
+.menus .winter-date p span{
+    color: var(--main-color);
+}
+.menus img.shape-5 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width : 50vw; 
+    animation: move-bottom 4s ease-in-out infinite alternate-reverse;
+}
+.menus img.shape-6 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40vw;
+    animation: move-top 4s ease-in-out infinite alternate-reverse;
+}
+@media (max-width : 576px) {
+    .menus .dish .head {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .menus .dish .betweenThem {
+        display: none;
+    }
 }
 @media (max-width : 992px) {
     .menus .bottom-content {
         grid-template-columns: 1fr;
     }
+    .menus .bottom-content::after {
+        display: none;
+    }
 }
 /* end menus */
+
+/* start thanks */
+.thanks {
+    position: relative;
+}
+.thanks .image img {
+    width: 100%;
+    height: 100vh;
+    filter: brightness(0.7);
+}
+.thanks .content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    color: white;
+    text-align: center;
+}
+.thanks .content i {
+    font-size: 5vw;
+}
+.thanks .spans {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+.thanks .spans span {
+    width: 15px;
+    height: 15px;
+    border: solid 1px var(--main-color);
+    animation: rotated-img linear infinite 8s;
+}
+/* end thanks */
