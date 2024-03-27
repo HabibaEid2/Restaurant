@@ -193,6 +193,17 @@ button {
     border-top: solid 1px var(--main-color);
     border-bottom: solid 1px var(--main-color);
 }
+.spans {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+.spans span {
+    width: 15px;
+    height: 15px;
+    border: solid 1px var(--main-color);
+    animation: rotated-img linear infinite 8s;
+}
 @media (min-width : 992px) {
     .mainTitle {
         font-size: 60px !important;
@@ -952,17 +963,6 @@ hr.navTopLine {
 .thanks .content i {
     font-size: 5vw;
 }
-.thanks .spans {
-    display: flex;
-    justify-content: center;
-    gap: 4px;
-}
-.thanks .spans span {
-    width: 15px;
-    height: 15px;
-    border: solid 1px var(--main-color);
-    animation: rotated-img linear infinite 8s;
-}
 /* end thanks */
 
 /* start form */
@@ -1127,6 +1127,14 @@ hr.navTopLine {
     justify-content: space-around;
     margin-top: 70px;
 }
+.updates .update .date {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: black;
+    color: var(--main-color);
+    padding: 3px 5px;
+}
 .updates .update .content {
     position: absolute;
     left: 0;
@@ -1143,10 +1151,104 @@ hr.navTopLine {
     display: none;
 }
 .updates button {
-    width: fit-content;
-    margin:auto;
+    display: block;
+    margin:40px auto;
 }
 .updates button::after {
     content: "VIEW OUR BLOG";
 }
 /* end updates */
+
+/* start footer */
+footer {
+    background-image: url(./images/footer-bg.jpg);
+    background-size: contain;
+    color: white;
+}
+footer .mainAnav .main{
+    background-color: #161718;
+    position: relative;
+    overflow: hidden;
+}
+footer .mainAnav .main::before {
+    content: url(./images/footer-form-pattern.svg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 17px;
+    z-index: 1;
+}
+footer .mainAnav .main::after {
+    content: url(./images/footer-form-pattern.svg);
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 17px;
+    z-index: 1;
+}
+footer .main .insideContent {
+    position: relative;
+    z-index: 1;
+}
+footer .main > img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+footer .main .insideContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+    text-align: center;
+}
+footer .main .spans span {
+    width: 10px;
+    height: 10px;
+    margin-bottom: 20px;
+}
+footer a {
+    display: block;
+    margin: 10px;
+}
+footer a:hover {
+    color: var(--main-color);
+    transition:.2s ;
+}
+footer .main .p-colored span {
+    color: white;
+}
+footer .subscribe {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+footer .subscribe input {
+    height: 60px;
+    padding:5px 20px ;
+    color: white;
+    background-color:#161718;
+    color: white;
+    border: solid 1px #6c6c6c;
+    margin-bottom: 10px;
+}
+footer .subscribe input::placeholder {
+    color: white;
+}
+footer .subscribe input:focus {
+    outline: none;
+}
+footer .subscribe button {
+    padding: 10px 15px;
+    margin: 0;
+}
+footer .subscribe button::after {
+    content: "SUBSCRIBE";
+}
+/* end footer */
