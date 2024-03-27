@@ -1128,6 +1128,9 @@ hr.navTopLine {
     text-align: center;
     padding: 15px;
 }
+.updates .update img {
+    width: 100%;
+}
 .updates .update .subTitle{
     margin: 10px auto;
 }
@@ -1181,7 +1184,6 @@ footer .main::after {
     right: 0;
     height: 100%;
     width: 17px;
-    z-index: 1;
 }
 footer .main > img{
     position: absolute;
@@ -1195,7 +1197,7 @@ footer .main .insideContent {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 70px;
+    padding: 50px 10px;
     gap: 10px;
     text-align: center;
     position: relative;
