@@ -40,6 +40,31 @@ ul {
 button {
     font-size: 11px ;
 }
+.prettyImg{
+    position: relative;
+    overflow: hidden;
+}
+.prettyImg::after {
+    content: "";
+    background-image: linear-gradient(90deg , rgba(255, 255, 255, 0) , rgba(255, 255, 255, 0.676));
+    position: absolute;
+    left: -84px;
+    top: -263px;
+    transform: translateX(-50%);
+    height: 149%;
+    width: 73px;
+    z-index: 1;
+    rotate: 30deg;
+    transition: 0;
+}
+.prettyImg:hover::after {
+    top: 100px;
+    left: 400px;
+    transition: 1s;
+}
+.p-colored {
+    color: var(--p-color);
+}
 .unColored-btn {
     padding: 15px 35px;
     margin: 10px;
@@ -118,7 +143,7 @@ button {
     background-color: black;
     position: absolute;
     top: -205%;
-    left: -26px;
+    left: -14%;
     border-radius: 58%;
     transition: .4s;
 }
@@ -132,12 +157,41 @@ button {
     transition: .2s;
 }
 .colored-btn:hover::before {
-    top: -55%;
+    top: -50%;
     transition: .2s;
 }
 .colored-btn:hover::after {
     top: 50%;
     transition: .4s;
+}
+.phone {
+    color: var(--main-color);
+    font-size: 20px;
+    position: relative;
+    width: fit-content;
+    margin: auto;
+    padding: 5px;
+}
+.phone::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    transition: .4s;
+    border-top: solid 1px var(--main-color);
+    border-bottom: solid 1px var(--main-color);
+}
+.phone:hover::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 3px;;
+    border-top: solid 1px var(--main-color);
+    border-bottom: solid 1px var(--main-color);
 }
 @media (min-width : 992px) {
     .mainTitle {
@@ -325,10 +379,7 @@ hr.navTopLine {
 }
 .navbar .offcanvas {
     margin: 20px 0;
-    font-size: 34px;
-}
-.navbar .offcanvas p {
-    color: #c1c1c1;
+    font-size: 20px;
 }
 .navbar .offcanvas p a {
     transition: .4s;
@@ -346,10 +397,6 @@ hr.navTopLine {
 }
 .navbar .offcanvas h6 {
     font-weight: bold;
-}
-.navbar .offcanvas .phone {
-    font-size: 25px;
-    color: var(--main-color);
 }
 @media (max-width : 567px) {
     .navBottom .navbar .find-a-table {
@@ -556,28 +603,6 @@ hr.navTopLine {
     rotate: y 360deg;
     transition: 2s;
 }
-.services .bottom-content .inside {
-    position: relative;
-    overflow: hidden;
-}
-.services .bottom-content .inside::after {
-    content: "";
-    background-image: linear-gradient(90deg , rgba(255, 255, 255, 0) , rgba(255, 255, 255, 0.676));
-    position: absolute;
-    left: -84px;
-    top: -178px;
-    transform: translateX(-50%);
-    height: 149%;
-    width: 73px;
-    z-index: 1;
-    rotate: 30deg;
-    transition: 0;
-}
-.services .bottom-content .inside:hover::after {
-    top: -20px;
-    left: 400px;
-    transition: 1s;
-}
 .services .service h3 {
     margin: 44px 0 4px;
 }
@@ -654,34 +679,9 @@ hr.navTopLine {
 .books .container .content {
     padding: 20px;
 }
-.books .content .phone {
-    color: var(--main-color);
-    font-size: 20px;
-    position: relative;
-    width: fit-content;
-    margin: auto;
-    padding: 5px;
-}
-.books .content .phone::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 3px;
-    transition: .4s;
-    border-top: solid 1px var(--main-color);
-    border-bottom: solid 1px var(--main-color);
-}
-.books .content .phone:hover::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 3px;;
-    border-top: solid 1px var(--main-color);
-    border-bottom: solid 1px var(--main-color);
+
+.books .content .unColored-btn::after {
+    content: "READ MORE";
 }
 .books .images {
     position: relative;
@@ -887,7 +887,6 @@ hr.navTopLine {
     padding: 1px 7px;
 }
 .menus .content p {
-    color: hsla(0, 0%, 65%, 1);
     padding: 10px 10px 10px 0px;
     margin: 0;
 }
@@ -945,9 +944,10 @@ hr.navTopLine {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
     color: white;
     text-align: center;
+    margin: 45px auto;
 }
 .thanks .content i {
     font-size: 5vw;
@@ -964,3 +964,189 @@ hr.navTopLine {
     animation: rotated-img linear infinite 8s;
 }
 /* end thanks */
+
+/* start form */
+.reversation {
+    position: relative;
+    background-color: #161718;
+}
+.reversation .container {
+    display: grid;
+    grid-template-columns: 2.5fr 1.5fr;
+    position: relative;
+    transform: translateY(-10%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+.reversation .rever-form {
+    background-color: black;
+    padding: 26px;
+}
+.reversation form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.reversation form input::placeholder,
+.reversation form textarea::placeholder 
+{
+    color: white;
+}
+.reversation form input , 
+.reversation form textarea , 
+.reversation form select {
+    color: white;
+    padding: 10px;
+    border: solid 1px #6c6c6c;
+    width: 100%;
+}
+.reversation form input:focus , 
+.reversation form textarea:focus , 
+.reversation form select:focus {
+    border-color: var(--main-color);
+    outline: none;
+    transition: .5s;
+}
+.reversation form input,.reversation form select , .reversation form textarea {
+    background-color: #161718;
+}
+.reversation .rever-form .formSlide {
+    display: flex;
+    gap: 5px;
+}
+.reversation .rever-form button {
+    width: 100%;
+    margin: 0;
+}
+.reversation .contact {
+    background-image: url(./images/form-pattern.png);
+    background-color: #161718;
+    padding: 26px;
+}
+.reversation .rever-form .colored-btn::after {
+    content: "BOOK A TABLE";
+}
+.reversation .phone:nth-child(1) {
+    font-size: inherit;
+}
+.reversation .contact .bar {
+    margin: 20px;
+}
+@media (max-width: 767px) {
+    .reversation .rever-form .formSlide {
+        flex-direction: column;
+    }
+}
+@media (max-width: 991px) {
+    .reversation .container {
+        grid-template-columns: 1fr;
+    }
+}
+/* end form */
+
+/* start strengths */
+.strengths {
+    background-color:#161718;
+    color: white;
+    padding-bottom: 70px;
+    position: relative;
+}
+.strengths .container {
+    position: relative;
+    z-index: 1;
+}
+.strengths .subTitle {
+    margin: auto;
+    width: fit-content;
+    display: block;
+}
+.strengths .mainTitle {
+    margin: 30px auto;
+    width: fit-content;
+}
+.strengths .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px ;
+    flex-wrap: wrap;
+}
+.strengths .strength {
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+}
+.strengths .strength .image {
+    margin: 20px;
+    transition: 1s;
+}
+.strengths .strength:hover .image{
+    transform: rotatey(180deg);
+}
+.strengths > img:nth-child(2) {
+    position: absolute;
+    top: 5%;
+    right: 50px;
+}
+.strengths > img:nth-child(1) {
+    position: absolute;
+    bottom: 0%;
+    left: 50px;
+}
+@media (max-width : 767px) {
+    .strengths .content {
+        grid-template-columns: 1fr;
+    }
+}
+/* end strengths */
+
+/* start updates */
+.updates {
+    padding: 70px 0;
+    background-color: black;
+    margin: 0;
+    color: white;
+}
+.updates .update {
+    position: relative;
+    color: white;
+}
+.updates .subTitle {
+    margin: 10px auto;
+    width: fit-content;
+    display: block;
+}
+.updates .mainTitle {
+    margin: 30px auto;
+    width: fit-content;
+}
+.updates .container > .content {
+    display: flex;
+    gap: 45px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 70px;
+}
+.updates .update .content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-image: linear-gradient(0deg, #000000e3 0, transparent);
+    text-align: center;
+    padding: 15px;
+}
+.updates .update .subTitle{
+    margin: 10px auto;
+}
+.updates .update .subTitle::before {
+    display: none;
+}
+.updates button {
+    width: fit-content;
+    margin:auto;
+}
+.updates button::after {
+    content: "VIEW OUR BLOG";
+}
+/* end updates */
