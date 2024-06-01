@@ -712,7 +712,7 @@ hr.navTopLine {
     right: 10px;
     border-radius: 50%;
     z-index: 1;
-    animation: 6s linear 0s infinite normal none running booksRotatedImg;
+    animation: 6s linear 0s infinite none booksRotatedImg;
  }
  .books .images::after {
     content: url(./images/img-pattern.svg);
@@ -1024,6 +1024,7 @@ hr.navTopLine {
     background-color:#161718;
     color: white;
     padding-bottom: 70px;
+    position: relative;
 }
 .strengths .container {
     position: relative;
