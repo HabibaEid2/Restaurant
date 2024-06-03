@@ -868,6 +868,13 @@ hr.navTopLine {
 .menus .head h3:hover {
     color: var(--main-color);
 }
+.menus pre {
+    font-family: inherit !important;
+    font-size: 20px !important;
+    font-weight: bold;
+    margin: 0;
+    overflow: hidden;
+}
 .menus .head .seasonal {
     color: black;
     background-color: var(--main-color);
